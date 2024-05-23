@@ -49,7 +49,7 @@ All the data collected is compiled in a PDF report, including the results of eve
 
 ## Prerequisites
 
-- **Python**: Ensure you have Python (version 3.10 or 3.11) installed on your system. You can download it from [python.org](https://www.python.org/downloads/).
+- **Python**: Ensure you have Python (version 3.10 or 3.11) installed on your system. You can download it from [python.org](https://www.python.org/downloads/). !!!WARNING!!! the toolbox will not work if you had install python 3.12, make sure you installed Python 3.10 or 3.11.
 - **pip**: Ensure you have pip installed for managing Python packages.
 - **Nmap**: Download and install Nmap from [nmap.org](https://nmap.org/download.html).
 - **Perl**: Some tools may require Perl (for Nikto). You can download it from [perl.org](https://www.perl.org/get.html).
@@ -58,7 +58,7 @@ All the data collected is compiled in a PDF report, including the results of eve
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/sleyzer47/toolbox.git
+    https://github.com/RaphaelCyberOPS/toolbox-cyber
 
     cd toolbox/
 
