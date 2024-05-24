@@ -12,7 +12,7 @@ L’application a été développée en python et fonctionne sous Windows, ce qu
 
 Cependant, l’interprétation des résultats peut être compliquée sans une telle connaissance.
 
-## Features
+## Fonctionnalités
 
 ### 1. Acquisition Nmap
 L’outil intègre Nmap pour effectuer une analyse du réseau et recueillir des informations sur les ports ouverts, les services et les versions.
