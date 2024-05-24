@@ -11,3 +11,5 @@ Il regroupe divers résultats d’analyse dans un rapport PDF bien structuré, c
 L’application a été développée en python et fonctionne sous Windows, ce qui la rend facile d’accès, pour un accès plus facile. L’application peut être utilisée sans aucune connaissance de la cybersécurité.
 
 Cependant, l’interprétation des résultats peut être compliquée sans une telle connaissance.
+
+## Features
