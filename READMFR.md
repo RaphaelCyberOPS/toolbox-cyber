@@ -51,13 +51,13 @@ Toutes les données collectées sont compilées dans un rapport PDF, incluant le
 
 ## Installation
 
-1. **Clone the repository**:
+1. **Cloner le répertoire**:
     ```sh
     git clone https://github.com/RaphaelCyberOPS/toolbox-cyber.git
 
     cd toolbox/
 
-2. **Install the required packages**:
+2. **Installer les pacquets requis**:
     ```sh
     pip install -r requirements.txt
 
