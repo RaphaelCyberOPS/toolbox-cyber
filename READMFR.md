@@ -85,3 +85,55 @@ toolbox/
 └── wordlists/
     ├── username/
     └── password/
+
+
+##Utilisation
+Lancez l'Application : Démarrez l'application en exécutant le script main.py.
+
+sh
+Copier le code
+python main.py
+Naviguez dans le Menu : Après avoir lancé l'application, vous accéderez à une page de démarrage. Cliquez sur le bouton "Start" pour accéder au menu, qui permet de naviguer entre les différentes fonctionnalités du toolbox.
+
+Fonctionnement des Fonctionnalités
+Scan Nmap:
+
+Accédez à la Page Nmap : Depuis le menu principal, allez à la page "Nmap".
+Entrez les Informations Cibles : Saisissez l'adresse IP cible à scanner.
+Lancez le Scan : Démarrez le scan Nmap. Les résultats seront affichés dans le terminal et enregistrés pour inclusion dans le rapport PDF.
+Scan Web:
+
+Accédez à la Page de Scan Web : Depuis le menu principal, allez à la page "Web".
+Entrez les Informations Cibles : Saisissez l'URL ou l'adresse IP cible.
+Lancez les Scans : Les scans SQLMap et Nikto seront exécutés.
+SQLMap : Utilisé pour détecter et exploiter les vulnérabilités d'injection SQL.
+Nikto : Effectue des tests complets contre les serveurs web, vérifiant les fichiers potentiellement dangereux, les versions obsolètes et les problèmes spécifiques aux versions.
+Visualisez les Résultats : Les résultats des deux scans seront enregistrés pour inclusion dans le rapport PDF.
+Tests Réseau:
+
+Accédez à la Page Réseau : Depuis le menu principal, allez à la page "Network".
+Entrez les Informations Cibles : Saisissez l'adresse IP de la passerelle du réseau cible ou d'un autre réseau.
+Lancez les Tests : Les tests SYN Flood et Paquet Malformé seront exécutés.
+SYN Flood : Teste la résilience de la cible contre les attaques par SYN flood.
+Paquet Malformé : Envoie des paquets malformés à la cible pour tester les vulnérabilités.
+Visualisez les Résultats : Les résultats des deux tests seront enregistrés pour inclusion dans le rapport PDF.
+Cartographie du Réseau:
+
+Accédez à la Page de Cartographie : Depuis le menu principal, allez à la page "Map".
+Entrez les Informations Cibles : Saisissez l'adresse IP du réseau et le masque de sous-réseau.
+Générez la Carte : Créez une représentation visuelle de la structure du réseau. La carte aidera à identifier les points critiques et les vulnérabilités potentielles.
+Génération et Test de Mots de Passe:
+
+Accédez à la Page de Mots de Passe : Depuis le menu principal, allez à la page "Password".
+Générez un Mot de Passe : Utilisez la fonction de génération de mots de passe selon des critères définis par l'utilisateur.
+Testez la Robustesse des Mots de Passe : Entrez un mot de passe pour tester sa robustesse, l'outil fournira une note.
+Brute Force SSH:
+
+Accédez à la Page SSH : Depuis le menu principal, allez à la page "SSH".
+Entrez les Informations Cibles : Saisissez l'adresse IP et le port cible.
+Entrez les Listes de Credentials : Fournissez les listes de noms d'utilisateur et de mots de passe pour l'attaque par force brute.
+Lancez l'Attaque : Exécutez l'attaque par force brute. Les résultats seront affichés et enregistrés pour inclusion dans le rapport PDF.
+Génération du Rapport PDF:
+
+Accédez à la Page PDF : Depuis le menu principal, allez à la page "PDF".
+Générez le Rapport : Cliquez sur le bouton pour générer le rapport PDF. Le rapport compilera toutes les données collectées dans un document structuré incluant les résultats de tous les scans effectués.
