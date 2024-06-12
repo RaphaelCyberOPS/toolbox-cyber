@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Bienvenue dans le Pentest Toolbox, un projet développé dans le cadre de mon programme de Master en Cybersécurité.
+Bienvenue dans le Pentest Toolbox, projet developpé pour mes études et dans mes entreprises
 
 Cet outil est conçu pour automatiser les tests de pénétration professionnels. Il consolide les résultats de divers scans dans un rapport PDF bien structuré, facilitant ainsi la revue et la résolution des vulnérabilités par les professionnels de la sécurité.
 
@@ -61,7 +61,7 @@ Toutes les données collectées sont compilées dans un rapport PDF, incluant le
     ```sh
     pip install -r requirements.txt
 
-## Project Structure:
+## Structure du projet:
 
     toolbox/
     ├── main.py
