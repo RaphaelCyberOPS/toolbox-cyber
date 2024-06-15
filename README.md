@@ -61,7 +61,7 @@ All the data collected is compiled in a PDF report, including the results of eve
     ```sh
      git clone https://github.com/RaphaelCyberOPS/toolbox-cyber.git
 
-    cd toolbox/
+    cd toolbox-cyber/
 
 2. **Install the required packages**:
     ```sh
