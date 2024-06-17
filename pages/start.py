@@ -18,8 +18,8 @@ class StartPage(ctk.CTkFrame):
         logo_label.pack(side=ctk.TOP, pady=(20, 20))
 
         # Display a welcome label
-        label = ctk.CTkLabel(self.canvas, text="Welcome in the Toolbox!", text_color="white")
-        label.pack(pady=10, padx=10)
+        label = ctk.CTkLabel(self.canvas, text="Welcome Pentester, enjoy the tool !", text_color="white")
+        label.pack(pady=15, padx=10)
 
         # Add a button to navigate to the menu
         menu_button = ctk.CTkButton(self.canvas, text="Start", command=self.go_to_menu)

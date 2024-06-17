@@ -32,10 +32,10 @@ class MenuPage(ctk.CTkFrame):
         # Add navigation buttons to the button frame
         for text, command in buttons:
             btn = ctk.CTkButton(button_frame, text=text, command=command)
-            btn.pack(fill="x", padx=10, pady=5)
+            btn.pack(fill="x", padx=15, pady=10)
         
         # Add a quit button
-        quit_button = ctk.CTkButton(button_frame, text="Quitter", command=self.quit_app, fg_color="#d05e5e")
+        quit_button = ctk.CTkButton(button_frame, text="Exit", command=self.quit_app, fg_color="#d05e5e")
         quit_button.pack(fill="x", padx=10, pady=5)
 
         # Add a text widget with scroll functionality
@@ -45,14 +45,17 @@ class MenuPage(ctk.CTkFrame):
         scrollbar = Scrollbar(text_frame)
         scrollbar.pack(side=RIGHT, fill=Y)
 
-        text_widget = Text(text_frame, wrap="word", font=("Arial", 12), bg="#f0f0f0", fg="black", bd=0, highlightthickness=0, yscrollcommand=scrollbar.set)
-        text_widget.pack(side="top", fill="both", expand=True)
-        scrollbar.config(command=text_widget.yview)
+        self.text_widget = Text(text_frame, wrap="word", font=("Arial", 12), bg="#f0f0f0", fg="black", bd=0, highlightthickness=0, yscrollcommand=scrollbar.set)
+        self.text_widget.pack(side="top", fill="both", expand=True)
+        scrollbar.config(command=self.text_widget.yview)
 
-        self.insert_text(text_widget)
+        self.insert_text(self.text_widget)
 
         # Make the text read-only
-        text_widget.config(state="disabled")
+        self.text_widget.config(state="disabled")
+
+        # Bind the configure event to resize text
+        self.bind("<Configure>", self.on_resize)
 
     def insert_text(self, text_widget):
         # Load introduction text from file
@@ -64,7 +67,7 @@ class MenuPage(ctk.CTkFrame):
         text_widget.tag_configure("bold", font=("Arial", 12, "bold"))
 
         # Insert styled text
-        text_widget.insert(END, "Welcome to Pentest Toolbox!\n", "title")
+        text_widget.insert(END, "Welcome RedTeam Member :)\n", "title")
         text_widget.insert(END, "\nPentest Toolbox is an integrated suite of tools designed to facilitate and speed up penetration testing for cybersecurity professionals. This application combines various features that cover multiple aspects of security audits, enabling users to scan, analyze, and assess the security of networks and computer systems.\n\n", "normal")
         
         text_widget.insert(END, "Objectives of Pentest Toolbox:\n", "subtitle")
@@ -101,3 +104,10 @@ class MenuPage(ctk.CTkFrame):
 
     def quit_app(self):
         self.controller.quit()
+
+    def on_resize(self, event):
+        """Adjust font size based on window size."""
+        width = self.winfo_width()
+        font_size = max(12, int(width / 50))  # Adjust the divisor to scale font size appropriately
+        self.text_widget.config(font=("Arial", font_size))
+

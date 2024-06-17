@@ -47,7 +47,7 @@ class MapPage(ctk.CTkFrame):
 
         # Add a quit button
         quit_button = ctk.CTkButton(button_frame, text="Quitter", command=self.quit_app, fg_color="#d05e5e")
-        quit_button.pack(fill="x", padx=10, pady=5)
+        quit_button.pack(fill="x", padx=15, pady=10)
 
         # Add labels and an entry for the network range
         ctk.CTkLabel(self.canvas, text="Map Page", text_color="Black", font=(None, 20)).pack(side="top", pady=10, anchor="n")

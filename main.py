@@ -15,7 +15,7 @@ class CustomTkinterApp(ctk.CTk):
 
         # Set window title and size
         self.title("ToolBox @HackMeRaphael")
-        self.geometry("800x600")
+        self.geometry("900x700")
 
         # Current language attribute
         self.current_language = "en"
