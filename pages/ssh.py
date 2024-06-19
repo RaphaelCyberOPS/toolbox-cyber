@@ -49,14 +49,14 @@ class SSHPage(ctk.CTkFrame):
             ("PDF", lambda: self.controller.show_frame("PDFPage"))
         ]
 
-        # Add navigation buttons to the button frame
+        # Add buttons to the button frame with the specified color
         for text, command in buttons:
-            btn = ctk.CTkButton(button_frame, text=text, command=command)
-            btn.pack(fill="x", padx=10, pady=5)
+            btn = ctk.CTkButton(button_frame, text=text, command=command, fg_color="#041B29", hover_color="#083247")
+            btn.pack(fill="x", padx=15, pady=10)
 
         # Add a quit button
-        quit_button = ctk.CTkButton(button_frame, text="Quitter", command=self.quit_app, fg_color="#d05e5e")
-        quit_button.pack(fill="x", padx=10, pady=5)
+        quit_button = ctk.CTkButton(button_frame, text="Exit", command=self.quit_app, fg_color="#831B04", hover_color="#831B04")
+        quit_button.pack(fill="x", padx=15, pady=10)
 
         # Add a title label and information label
         ctk.CTkLabel(self.canvas, text="SSH Page", text_color="Black", font=(None, 20)).pack(side="top", pady=10, anchor="n")
@@ -67,7 +67,7 @@ class SSHPage(ctk.CTkFrame):
         self.entry.pack(padx=200, pady=5)
 
         # Button to generate report
-        generate_button = ctk.CTkButton(self.canvas, text="Generate Report", command=self.run_scans)
+        generate_button = ctk.CTkButton(self.canvas, text="Generate Report", command=self.run_scans, fg_color="#041B29", hover_color="#083247")
         generate_button.pack(fill="x", padx=150, pady=5)
 
         self.setup_loading_animation()
@@ -151,15 +151,15 @@ class SSHPage(ctk.CTkFrame):
     def show_ssh_buttons(self):
         # Show buttons for SSH-related actions
         if not self.username_list_button:
-            self.username_list_button = ctk.CTkButton(self.canvas, text="Select Username List", command=lambda: self.select_list("username"))
+            self.username_list_button = ctk.CTkButton(self.canvas, text="Select Username List", command=lambda: self.select_list("username"), fg_color="#041B29", hover_color="#083247")
             self.username_list_button.pack(padx=10, pady=5)
         
         if not self.password_list_button:
-            self.password_list_button = ctk.CTkButton(self.canvas, text="Select Password List", command=lambda: self.select_list("password"))
+            self.password_list_button = ctk.CTkButton(self.canvas, text="Select Password List", command=lambda: self.select_list("password"), fg_color="#041B29", hover_color="#083247")
             self.password_list_button.pack(padx=10, pady=5)
         
         if not self.connect_button:
-            self.connect_button = ctk.CTkButton(self.canvas, text="Initiate SSH Connection", command=self.initiate_connection)
+            self.connect_button = ctk.CTkButton(self.canvas, text="Initiate SSH Connection", command=self.initiate_connection, fg_color="#041B29", hover_color="#083247")
             self.connect_button.pack(padx=10, pady=5)
 
     def initiate_connection(self):

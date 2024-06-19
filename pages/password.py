@@ -33,23 +33,23 @@ class PasswordPage(ctk.CTkFrame):
             ("PDF", lambda: self.controller.show_frame("PDFPage"))
         ]
 
-        # Add navigation buttons to the button frame
+        # Add buttons to the button frame with the specified color
         for text, command in buttons:
-            btn = ctk.CTkButton(button_frame, text=text, command=command)
-            btn.pack(fill="x", padx=10, pady=5)
+            btn = ctk.CTkButton(button_frame, text=text, command=command, fg_color="#041B29", hover_color="#083247")
+            btn.pack(fill="x", padx=15, pady=10)
 
-        # Add a quit button
-        quit_button = ctk.CTkButton(button_frame, text="Quitter", command=self.quit_app, fg_color="#d05e5e")
-        quit_button.pack(fill="x", padx=10, pady=5)
+        # Add a quit button with a different color
+        quit_button = ctk.CTkButton(button_frame, text="Exit", command=self.quit_app, fg_color="#831B04", hover_color="#831B04")
+        quit_button.pack(fill="x", padx=15, pady=10)
 
         # Add a title label
         ctk.CTkLabel(self.canvas, text="Password Page", text_color="Black", font=(None, 20)).pack(side="top", pady=10, anchor="n")
 
         # Add buttons for password generation and testing
-        self.generate_password_button = ctk.CTkButton(self.canvas, text="Generate Password", command=self.show_generate_password)
+        self.generate_password_button = ctk.CTkButton(self.canvas, text="Generate Password", command=self.show_generate_password, fg_color="#041B29", hover_color="#083247")
         self.generate_password_button.pack(pady=5)
 
-        self.test_password_button = ctk.CTkButton(self.canvas, text="Test Password", command=self.show_test_password)
+        self.test_password_button = ctk.CTkButton(self.canvas, text="Test Password", command=self.show_test_password, fg_color="#041B29", hover_color="#083247")
         self.test_password_button.pack(pady=5)
 
         # Show the password generation UI by default
@@ -77,7 +77,7 @@ class PasswordPage(ctk.CTkFrame):
         self.include_special = ctk.CTkCheckBox(self.current_canvas, text="Include Special Characters")
         self.include_special.pack(padx=10, pady=5)
 
-        generate_button = ctk.CTkButton(self.current_canvas, text="Generate Password", command=self.generate_password)
+        generate_button = ctk.CTkButton(self.current_canvas, text="Generate Password", command=self.generate_password, fg_color="#041B29", hover_color="#083247")
         generate_button.pack(fill="x", padx=150, pady=5)
 
         self.result_label = ctk.CTkLabel(self.current_canvas, text="", font=(None, 12), text_color="Blue")
@@ -90,7 +90,7 @@ class PasswordPage(ctk.CTkFrame):
         self.password_entry = ctk.CTkEntry(self.current_canvas, placeholder_text="Enter password to test")
         self.password_entry.pack(pady=10)
 
-        test_button = ctk.CTkButton(self.current_canvas, text="Test Strength", command=self.test_password)
+        test_button = ctk.CTkButton(self.current_canvas, text="Test Strength", command=self.test_password, fg_color="#041B29", hover_color="#083247")
         test_button.pack(pady=20)
 
         self.test_result_label = ctk.CTkLabel(self.current_canvas, text="", font=(None, 12))

@@ -40,14 +40,15 @@ class NetworkPage(ctk.CTkFrame):
             ("PDF", lambda: self.controller.show_frame("PDFPage"))
         ]
 
-        # Add navigation buttons to the button frame
+        # Add buttons to the button frame with updated colors
+        button_color = "#041B29"
         for text, command in buttons:
-            btn = ctk.CTkButton(button_frame, text=text, command=command)
-            btn.pack(fill="x", padx=10, pady=5)
+            btn = ctk.CTkButton(button_frame, text=text, command=command, fg_color=button_color)
+            btn.pack(fill="x", padx=15, pady=10)
 
         # Add a quit button
-        quit_button = ctk.CTkButton(button_frame, text="Quitter", command=self.quit_app, fg_color="#d05e5e")
-        quit_button.pack(fill="x", padx=10, pady=5)
+        quit_button = ctk.CTkButton(button_frame, text="Exit", command=self.quit_app, fg_color="#831B04")
+        quit_button.pack(fill="x", padx=15, pady=10)
 
         # Add labels and entry widget
         ctk.CTkLabel(self.canvas, text="Network Page", text_color="Black", font=(None, 20)).pack(side="top", pady=10, anchor="n")
@@ -58,7 +59,7 @@ class NetworkPage(ctk.CTkFrame):
         self.entry.pack(padx=200, pady=5)
 
         # Add a button to generate the report
-        generate_button = ctk.CTkButton(self.canvas, text="Generate Report", command=self.run_scans)
+        generate_button = ctk.CTkButton(self.canvas, text="Generate Report", command=self.run_scans, fg_color=button_color)
         generate_button.pack(fill="x", padx=150, pady=5)
 
         # Set up loading animation

@@ -39,24 +39,26 @@ class MapPage(ctk.CTkFrame):
             ("SSH", lambda: self.controller.show_frame("SSHPage")),
             ("PDF", lambda: self.controller.show_frame("PDFPage"))
         ]
+        
+        button_color = "#041B29"
 
         # Add buttons to the button frame
         for text, command in buttons:
-            btn = ctk.CTkButton(button_frame, text=text, command=command)
-            btn.pack(fill="x", padx=10, pady=5)
+            btn = ctk.CTkButton(button_frame, text=text, command=command, fg_color=button_color)
+            btn.pack(fill="x", padx=15, pady=10)
 
         # Add a quit button
-        quit_button = ctk.CTkButton(button_frame, text="Quitter", command=self.quit_app, fg_color="#d05e5e")
+        quit_button = ctk.CTkButton(button_frame, text="Exit", command=self.quit_app, fg_color="#831B04")
         quit_button.pack(fill="x", padx=15, pady=10)
 
         # Add labels and an entry for the network range
-        ctk.CTkLabel(self.canvas, text="Map Page", text_color="Black", font=(None, 20)).pack(side="top", pady=10, anchor="n")
+        ctk.CTkLabel(self.canvas, text="Map Page", text_color="grey", font=(None, 20)).pack(side="top", pady=15, anchor="n")
         ctk.CTkLabel(self.canvas, text="Enter the network IP range and subnet mask (ex:192.168.1.0/24)", text_color="Black", font=(None, 14)).pack(side="top", pady=10, anchor="n")
         
         self.entry = ctk.CTkEntry(self.canvas, placeholder_text="Enter the target IP range")
         self.entry.pack(padx=200, pady=5)
         
-        generate_button = ctk.CTkButton(self.canvas, text="Generate Map", command=self.run_scans)
+        generate_button = ctk.CTkButton(self.canvas, text="Generate Map", command=self.run_scans, fg_color=button_color)
         generate_button.pack(fill="x", padx=150, pady=5)
 
         # Setup loading animation

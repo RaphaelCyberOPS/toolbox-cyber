@@ -22,16 +22,16 @@ class StartPage(ctk.CTkFrame):
         label.pack(pady=15, padx=10)
 
         # Add a button to navigate to the menu
-        menu_button = ctk.CTkButton(self.canvas, text="Start", command=self.go_to_menu)
-        menu_button.pack(pady=5)
+        menu_button = ctk.CTkButton(self.canvas, text="Start", command=self.go_to_menu, fg_color="#041B29", hover_color="#083247")
+        menu_button.pack(pady=15)
 
         # Add a button to open the README in the web browser
-        readme_button = ctk.CTkButton(self.canvas, text="Read Me", command=self.open_readme)
-        readme_button.pack(pady=5)
+        readme_button = ctk.CTkButton(self.canvas, text="Read Me", command=self.open_readme, fg_color="#041B29", hover_color="#083247")
+        readme_button.pack(pady=15)
 
         # Add a button to quit the application
-        quit_button = ctk.CTkButton(self.canvas, text="Quit", command=self.quit_app)
-        quit_button.pack(pady=5)
+        quit_button = ctk.CTkButton(self.canvas, text="Quit", command=self.quit_app, fg_color="#831B04")
+        quit_button.pack(pady=15)
 
     # Method to navigate to the menu page
     def go_to_menu(self):

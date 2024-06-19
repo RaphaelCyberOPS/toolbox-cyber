@@ -39,14 +39,14 @@ class NmapPage(ctk.CTkFrame):
             ("PDF", lambda: self.controller.show_frame("PDFPage"))
         ]
 
-        # Add navigation buttons to the button frame
+        # Add buttons to the button frame with the specified color
         for text, command in buttons:
-            btn = ctk.CTkButton(button_frame, text=text, command=command)
-            btn.pack(fill="x", padx=10, pady=5)
+            btn = ctk.CTkButton(button_frame, text=text, command=command, fg_color="#041B29", hover_color="#083247")
+            btn.pack(fill="x", padx=15, pady=10)
 
         # Add a quit button
-        quit_button = ctk.CTkButton(button_frame, text="Quitter", command=self.quit_app, fg_color="#d05e5e")
-        quit_button.pack(fill="x", padx=10, pady=5)
+        quit_button = ctk.CTkButton(button_frame, text="Exit", command=self.quit_app, fg_color="#831B04", hover_color="#831B04")
+        quit_button.pack(fill="x", padx=15, pady=10)
 
         # Add labels and entry widget
         ctk.CTkLabel(self.canvas, text="Nmap Page", text_color="Black", font=(None, 20)).pack(side="top", pady=10, anchor="n")
@@ -56,7 +56,7 @@ class NmapPage(ctk.CTkFrame):
         self.entry.pack(padx=200, pady=5)
 
         # Add a button to generate the report
-        generate_button = ctk.CTkButton(self.canvas, text="Generate Report", command=self.generate_report)
+        generate_button = ctk.CTkButton(self.canvas, text="Generate Report", command=self.generate_report, fg_color="#041B29", hover_color="#083247")
         generate_button.pack(fill="x", padx=150, pady=5)
 
         # Set up loading animation
