@@ -50,10 +50,10 @@ class CustomTkinterApp(ctk.CTk):
         button_frame = ctk.CTkFrame(self)
         button_frame.pack(side="top", fill="x")
 
-        english_button = ctk.CTkButton(button_frame, text="English", command=lambda: self.set_language("en"))
+        english_button = ctk.CTkButton(button_frame, text="English", fg_color="#041B29", hover_color="#083247", command=lambda: self.set_language("en"))
         english_button.pack(side="left")
 
-        french_button = ctk.CTkButton(button_frame, text="Français", command=lambda: self.set_language("fr"))
+        french_button = ctk.CTkButton(button_frame, text="Français", fg_color="#041B29", hover_color="#083247", command=lambda: self.set_language("fr"))
         french_button.pack(side="left")
 
     # Method to set the language

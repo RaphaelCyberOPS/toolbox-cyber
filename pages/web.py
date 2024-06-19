@@ -40,13 +40,14 @@ class WebPage(ctk.CTkFrame):
             ("SSH", lambda: self.controller.show_frame("SSHPage")),
             ("PDF", lambda: self.controller.show_frame("PDFPage"))
         ]
+        # Add buttons to the button frame with the specified color
         for text, command in buttons:
-            btn = ctk.CTkButton(button_frame, text=text, command=command)
-            btn.pack(fill="x", padx=10, pady=5)
+            btn = ctk.CTkButton(button_frame, text=text, command=command, fg_color="#041B29", hover_color="#083247")
+            btn.pack(fill="x", padx=15, pady=10)
 
         # Add a quit button
-        quit_button = ctk.CTkButton(button_frame, text="Quitter", command=self.quit_app, fg_color="#d05e5e")
-        quit_button.pack(fill="x", padx=10, pady=5)
+        quit_button = ctk.CTkButton(button_frame, text="Exit", command=self.quit_app, fg_color="#831B04", hover_color="#831B04")
+        quit_button.pack(fill="x", padx=15, pady=10)
 
         # Add labels and entry field for target IP
         ctk.CTkLabel(self.canvas, text="Web Page", text_color="Black", font=(None, 20)).pack(side="top", pady=10, anchor="n")
@@ -56,7 +57,7 @@ class WebPage(ctk.CTkFrame):
         self.entry.pack(padx=200, pady=5)
 
         # Button to generate report
-        generate_button = ctk.CTkButton(self.canvas, text="Generate Report", command=self.run_scans)
+        generate_button = ctk.CTkButton(self.canvas, text="Generate Report", command=self.run_scans, fg_color="#041B29", hover_color="#083247")
         generate_button.pack(fill="x", padx=150, pady=5)
 
         self.setup_loading_animation()
@@ -115,6 +116,7 @@ class WebPage(ctk.CTkFrame):
     def scan_with_nmap(self, ip):
         # Scan the target IP with nmap
         command = ["nmap", ip]
+        print(f"Running nmap command: {command}")
         result = subprocess.run(command, capture_output=True, text=True)
         output = result.stdout
         
@@ -180,6 +182,7 @@ class WebPage(ctk.CTkFrame):
         start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         try:
             result = subprocess.run(command, shell=True, text=True, capture_output=True)
+            print(f"sqlmap output: {result.stdout}")
             end_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
             detected = "injection not detected" not in result.stdout
             output = self.parse_sqlmap_output(result.stdout)
@@ -196,6 +199,7 @@ class WebPage(ctk.CTkFrame):
         start_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         try:
             result = subprocess.run(command, text=True, capture_output=True, timeout=300)
+            print(f"Nikto output: {result.stdout}")
             end_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
             output = self.parse_nikto_output(result.stdout)
             return {"start_time": start_time, "end_time": end_time, "CVE": output}
